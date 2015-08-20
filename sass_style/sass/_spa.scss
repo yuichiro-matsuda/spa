@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@import "_global";
+// spa.css
+
+// reset
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// リストはそのまま渡すと全部連結になる
+#{$elem_h} {
+  margin: 10px;
+}
+
+#{$elem_list_parent} {
+  list-style-position: inline;
+}
+
+//標準セレクタ
+
+// font-familyはそのまま書く
+// インターポレーションしない
+body {
+  font: 13px $font-family;
+}
+
+a {
+  text-decoration: none;
+  &:link,&:visited {
+    color: inherit;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: 800;
+  color: $color-strong;
+}
+// 標準セレクタ終了
+
+// spa namespace　開始
+#spa {
+  @include locale();
+  @include position(8px,8px,8px,8px);
+  min-height: 500px;
+  min-width: 500px;
+  overflow: hidden;
+
+  background-color: $color-background;
+  border-radius: 0 8px 0 8px;
+}
+
+.spa-x-select {}
+.spa-x-clearfloat {
+  height: 0 !important;
+  float: none !important;
+  visibility: hidden !important;
+  clear: both !important;
+}

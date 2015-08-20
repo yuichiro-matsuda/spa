@@ -1,0 +1,110 @@
+/*
+ * spa.chat.css
+ * Chat feature styles
+*/
+@import "_global";
+
+.spa-chat {
+  @extend %outer-border;
+  @include locale(right-bottom);
+  background    : $color-chat-main;
+  width         : 25em;
+  height        : 2em;
+  box-shadow    : 0 0 0.75em 0 #888;
+  z-index       : 1;
+}
+
+.spa-chat-head, .spa-chat-closer {
+  @include locale(top);
+  font-family   : $font-family;
+  background    : $color-chat-main;
+  height        : 2em;
+  line-height   : 1.8em;
+  border-bottom : thin solid #888;
+  cursor        : pointer;
+  color         : white;
+  font-weight   : 800;
+  text-align    : center;
+}
+
+.spa-chat-head {
+  left          : 0;
+  right         : 2em;
+  border-radius : 0.3em 0 0 0;
+}
+
+.spa-chat-closer {
+  right : 0;
+  width : 2em;
+}
+  .spa-chat-closer:hover {
+    background : #800;
+  }
+
+.spa-chat-head-toggle {
+  @include locale(left-top);
+  width         : 2em;
+  bottom        : 0;
+  border-radius : 0.3em 0 0 0;
+}
+
+.spa-chat-head-title {
+  position    : absolute;
+  left        : 50%;
+  width       : 16em;
+  margin-left : -8em;
+}
+
+.spa-chat-sizer {
+  @include locale();
+  @include position(2em,0,false,0);
+}
+
+.spa-chat-msgs {
+  @include locale();
+  @include position(1em,1em,4em,1em);
+  padding  : 0.5em;
+  border   : thin solid #888;
+  overflow-x : hidden;
+  overflow-y : scroll;
+}
+
+.spa-chat-box {
+  @include locale();
+  @include position(false,1em,1em,1em);
+  height   : 2em;
+  border   : thin solid #888;
+  background : #888;
+}
+
+.spa-chat-box input[type=text] {
+  float      : left;
+  width      : 75%;
+  height     : 100%;
+  padding    : 0.5em;
+  border     : 0;
+  background : #ddd;
+  color      : #404040;
+}
+  .spa-chat-box input[type=text]:focus {
+    background : #fff;
+  }
+
+.spa-chat-box div {
+  float       : left;
+  width       : 25%;
+  height      : 2em;
+  line-height : 1.9em;
+  text-align  : center;
+  color       : #fff;
+  font-weight : 800;
+  cursor      : pointer;
+}
+  .spa-chat-box div:hover {
+    background-color: #444;
+    color      : #ff0;
+  }
+
+.spa-chat-head:hover .spa-chat-head-toggle {
+  background : #aaa;
+}

@@ -1,0 +1,46 @@
+%outer-border {
+  border-color: '#888';
+  border-radius: '0.5em 0 0';
+  border-style: solid;
+  border-width: thin 0 0 thin;
+}
+
+@mixin locale ($location:none) {
+  position: absolute;
+  @if $location == 'right-top' {
+    right: 0;
+    top: 0;
+  }@elseif $location == 'right-bottom' {
+    bottom: 0;
+    right: 0;
+  }@elseif $location == 'left-top' {
+    left: 0;
+    top: 0;
+  }@elseif $location == 'left-bottom' {
+    bottom: 0;
+    left: 0;
+  }@elseif $location == 'top' {
+    top: 0;
+  }@elseif $location == 'bottom' {
+    bottom: 0;
+  }@elseif $location == 'right' {
+    right: 0;
+  }@elseif $location == 'left' {
+    left: 0;
+  }
+}
+
+@mixin position ($top:false, $right:false, $bottom:false, $left:false) {
+  @if $top != false {
+    top: $top;
+  }
+  @if $right != false {
+    right: $right;
+  }
+  @if $bottom != false {
+    bottom: $bottom;
+  }
+  @if $left != false {
+    left: $left;
+  }
+}

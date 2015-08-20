@@ -1,0 +1,24 @@
+{
+  "name": "single-page-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo HEllO!",
+    "watch": "npm run sass:watch",
+    "sass:watch": "node-sass -w -o ./sass_style/stylesheets -r ./sass_style/sass",
+    "sass:compile": "node-sass -o ./sass_style/stylesheets -r ./sass_style/sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://speach@bitbucket.org/speach/single-page-application.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "node-sass": "^3.2.0"
+  }
+}
